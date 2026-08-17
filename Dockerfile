@@ -13,9 +13,14 @@ LABEL org.opencontainers.image.licenses="MIT"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+        autoconf \
+        automake \
         build-essential \
         ca-certificates \
         git \
+        libtool \
+        nasm \
+        pkg-config \
         uuid-dev \
     && git clone --depth 1 --branch "${PREMAKE_REF}" \
         https://github.com/premake/premake-core.git \
