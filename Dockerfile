@@ -16,10 +16,9 @@ RUN apt-get update \
         autoconf \
         automake \
         build-essential \
-        ca-certificates \
-        git \
         gcc-14 \
         g++-14 \
+        git \
         libtool \
         nasm \
         pkg-config \
