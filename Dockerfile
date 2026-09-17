@@ -18,10 +18,16 @@ RUN apt-get update \
         build-essential \
         ca-certificates \
         git \
+        gcc-14 \
+        g++-14 \
         libtool \
         nasm \
         pkg-config \
         uuid-dev \
+    && update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100 \
+        --slave /usr/bin/g++ g++ /usr/bin/g++-14 \
+    && gcc --version \
+    && g++ --version \
     && git clone --depth 1 --branch "${PREMAKE_REF}" \
         https://github.com/premake/premake-core.git \
         /tmp/premake-core \
